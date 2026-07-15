@@ -1,0 +1,318 @@
+Mar 03, 2025 2:25:30 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: Author updated: John Doe, Age: 45, Description: A famous author
+Mar 03, 2025 12:22:37 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 35, Description: John is a passionate writer.
+Mar 03, 2025 12:23:20 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 37, Description: John is a passionate writer.
+Mar 03, 2025 12:29:17 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 37, Description: John is a passionate writer.
+Mar 03, 2025 12:29:19 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 37, Description: John is a passionate writer.
+Mar 03, 2025 12:29:30 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Joshn Doe, Age: 30, Description: John is a passionate writer.
+Mar 03, 2025 12:30:04 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon Sadikaj, Age: 30, Description: John is a passionate writer.
+May 27, 2025 2:51:38 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 2:51:38 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 2:51:38 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Don Joe, Age: 65, Description: Some other description
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: A new description
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: New Name, Age: 30, Description: Some description
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 2:51:39 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 50, Description: Some description
+May 27, 2025 2:51:40 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 3:00:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 3:00:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 3:00:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 3:00:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Don Joe, Age: 65, Description: Some other description
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: A new description
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: New Name, Age: 30, Description: Some description
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 50, Description: Some description
+May 27, 2025 3:00:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 3:34:40 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Ana, Age: 22, Description: soidja'asjkd
+May 27, 2025 3:35:09 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon, Age: 22, Description: foi'afjkdalsjap'jd'pasjdpoajsdpjasp
+ldk;j
+May 27, 2025 5:20:25 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: sdas, Age: 33, Description: adsasdasd
+May 27, 2025 5:22:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: dasdsa, Age: 21, Description: asdasas
+May 27, 2025 5:23:08 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: dasdsa, Age: 21, Description: asdasas
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Don Joe, Age: 65, Description: Some other description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: A new description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: New Name, Age: 30, Description: Some description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 50, Description: Some description
+May 27, 2025 7:14:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:21:45 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:21:45 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:21:45 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Don Joe, Age: 65, Description: Some other description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: A new description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: New Name, Age: 30, Description: Some description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 50, Description: Some description
+May 27, 2025 7:21:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 7:42:40 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: sda, Age: 44, Description: easd
+May 27, 2025 7:54:51 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: 
+Biography of test author.
+May 27, 2025 7:54:53 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 7:59:44 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 7:59:45 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:06:25 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:06:27 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:09:44 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:12:18 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:15:33 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:16:59 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:17:19 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:17:44 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:18:06 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:18:35 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:21:03 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:23:22 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:24:20 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:26:04 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:27:57 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:28:12 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:31:21 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:33:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 8:38:03 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Selenium Test, Age: 45, Description: Biography of test author.
+May 27, 2025 10:26:15 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: ww, Age: 22, Description: sdadsaasd
+May 27, 2025 10:31:37 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: easd, Age: 22, Description: dsadsa
+May 27, 2025 10:36:44 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: wwEditedAuthorName, Age: 22, Description: sdadsaasd
+May 27, 2025 10:38:24 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: easdEditedAuthorName, Age: 22, Description: dsadsa
+May 27, 2025 10:38:34 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: wwEditedAuthorNameEditedAuthorName, Age: 22, Description: sdadsaasd
+May 27, 2025 10:38:45 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: easdEditedAuthorNameEditedAuthorName, Age: 22, Description: dsadsa
+May 27, 2025 10:39:01 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: hashim, Age: 22, Description: sdadsaasd
+May 27, 2025 10:39:07 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 22, Description: dsadsa
+May 27, 2025 10:41:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: hashimEditedAuthorName, Age: 22, Description: sdadsaasd
+May 27, 2025 10:41:47 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 2242, Description: dsadsa
+May 27, 2025 10:42:17 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: hashimEditedAuthorNameEditedAuthorName, Age: 22, Description: sdadsaasd
+May 27, 2025 10:42:18 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 224242, Description: dsadsa
+May 27, 2025 10:42:29 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 22, Description: dsadsa
+May 27, 2025 10:42:43 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 24, Description: dsadsa
+May 27, 2025 10:42:50 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: hashimEditedAuthorNameEditedAuthorNameEditedAuthorName, Age: 22, Description: sdadsaasd
+May 27, 2025 10:42:52 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 2442, Description: dsadsa
+May 27, 2025 10:43:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: hashimEditedAuthorNameEditedAuthorNameEditedAuthorNameEditedAuthorName, Age: 22, Description: sdadsaasd
+May 27, 2025 10:43:02 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Majmun, Age: 244242, Description: dsadsa
+May 27, 2025 10:44:26 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 2442, Description: dsadsa
+May 27, 2025 10:44:27 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: hashimEditedAuthorNameEditedAuthorNameEditedAuthorNameEditedAuthorName, Age: 42, Description: sdadsaasd
+May 27, 2025 10:44:46 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 2442, Description: dsadsa
+May 27, 2025 10:44:48 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: dsadsa
+May 27, 2025 10:44:58 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: sdadsaasd
+May 27, 2025 10:45:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: dsadsa
+May 27, 2025 10:45:18 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon, Age: 42, Description: dsadsa
+May 27, 2025 10:45:28 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon, Age: 42, Description: sdadsaasd
+May 27, 2025 10:45:32 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon, Age: 33, Description: dsadsa
+May 27, 2025 10:45:41 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon, Age: 43, Description: sdadsaasd
+May 27, 2025 10:45:50 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 33, Description: dsadsa
+May 27, 2025 10:45:51 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Drilon, Age: 42, Description: sdadsaasd
+May 27, 2025 10:46:20 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 33, Description: dsadsa
+May 27, 2025 10:46:22 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: dsadsa
+May 27, 2025 10:46:31 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: sdadsaasd
+May 27, 2025 10:46:32 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: dsadsa
+May 27, 2025 11:00:12 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Updated Author Name Selenium, Age: 45, Description: Updated via full Selenium flow.
+May 27, 2025 11:01:47 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Updated Author Name Selenium, Age: 45, Description: Updated via full Selenium flow.
+May 27, 2025 11:07:13 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: EditedAuthorName, Age: 42, Description: dsadsa
+May 27, 2025 11:50:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 1, Description: Some description
+May 27, 2025 11:50:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 0, Description: Some description
+May 27, 2025 11:50:00 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+May 27, 2025 11:50:47 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 11:50:48 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 11:50:48 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 11:50:48 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 11:50:48 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: Don Joe, Age: 65, Description: Some other description
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: A new description
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: New Name, Age: 30, Description: Some description
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 45, Description: A famous author
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 50, Description: Some description
+May 27, 2025 11:50:49 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: Some description
+May 27, 2025 11:51:14 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 1, Description: Some description
+May 27, 2025 11:51:14 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 0, Description: Some description
+May 27, 2025 11:51:15 PM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+May 28, 2025 12:00:41 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 1, Description: Some description
+May 28, 2025 12:00:41 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 0, Description: Some description
+May 28, 2025 12:00:42 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+May 28, 2025 12:02:37 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 1, Description: Some description
+May 28, 2025 12:02:37 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 0, Description: Some description
+May 28, 2025 12:02:37 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+May 28, 2025 12:03:52 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 1, Description: Some description
+May 28, 2025 12:03:52 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 0, Description: Some description
+May 28, 2025 12:03:52 AM com.devtiro.bookstore.services.observer.LoggerObserver update
+INFO: 📝 Author updated: John Doe, Age: 30, Description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
