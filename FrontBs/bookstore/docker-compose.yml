@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: drilonnol/frontendd:latest
+    container_name: frontend
+    ports:
+      - "3000:80"
+    networks:
+      - mynet
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: changemeinprod!
+    networks:
+      - mynet
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8888:8080"
+    networks:
+      - mynet
+
+  selenium-chrome-ui:
+    image: selenium/standalone-chrome-debug:latest
+    shm_size: 2g
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+    environment:
+      SE_NODE_SESSION_TIMEOUT: 60
+      SE_NODE_MAX_SESSIONS: 5
+    restart: always
+    networks:
+      - mynet
+
+networks:
+  mynet:
