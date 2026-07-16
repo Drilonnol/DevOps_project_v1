@@ -27,18 +27,5 @@ services:
     networks:
       - mynet
 
-  selenium-chrome-ui:
-    image: selenium/standalone-chrome-debug:latest
-    shm_size: 2g
-    ports:
-      - "4444:4444"
-      - "5900:5900"
-    environment:
-      SE_NODE_SESSION_TIMEOUT: 60
-      SE_NODE_MAX_SESSIONS: 5
-    restart: always
-    networks:
-      - mynet
-
 networks:
   mynet:
