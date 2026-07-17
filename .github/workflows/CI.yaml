@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  backend:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Make Maven Wrapper executable
+        working-directory: BackBs/bookstore
+        run: chmod +x mvnw
+
+      - name: Run Tests
+        working-directory: BackBs/bookstore
+        run: ./mvnw clean test
+
+      - name: Package Application
+        working-directory: BackBs/bookstore
+        run: ./mvnw package -DskipTests
