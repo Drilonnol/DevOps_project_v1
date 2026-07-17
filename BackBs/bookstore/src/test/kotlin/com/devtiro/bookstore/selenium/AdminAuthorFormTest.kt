@@ -1,6 +1,10 @@
 package com.devtiro.bookstore.selenium
 
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.Tag
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 import org.openqa.selenium.By
 import org.openqa.selenium.OutputType
 import org.openqa.selenium.TakesScreenshot
@@ -16,9 +20,9 @@ import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.time.Duration
 
+@Tag("selenium")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminAuthorFormTest {
-
     private lateinit var driver: WebDriver
 
     @BeforeAll
@@ -35,7 +39,10 @@ class AdminAuthorFormTest {
         }
     }
 
-    private fun waitUntilFrontendIsAvailable(url: String, timeoutSeconds: Long = 30) {
+    private fun waitUntilFrontendIsAvailable(
+        url: String,
+        timeoutSeconds: Long = 30,
+    ) {
         val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
         while (System.currentTimeMillis() < deadline) {
             try {
@@ -44,7 +51,8 @@ class AdminAuthorFormTest {
                 connection.readTimeout = 2000
                 connection.requestMethod = "GET"
                 if (connection.responseCode in 200..399) return
-            } catch (_: Exception) {}
+            } catch (_: Exception) {
+            }
             Thread.sleep(1000)
         }
         throw RuntimeException("Frontend not available at $url")
@@ -61,8 +69,8 @@ class AdminAuthorFormTest {
         try {
             wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
-                    By.cssSelector("input[aria-label='Name']")
-                )
+                    By.cssSelector("input[aria-label='Name']"),
+                ),
             )
         } catch (ex: Exception) {
             val screenshot = (driver as TakesScreenshot).getScreenshotAs(OutputType.FILE)
@@ -95,8 +103,8 @@ class AdminAuthorFormTest {
 
         wait.until(
             ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[contains(text(),'Create Author') or contains(text(),'Update Author')]")
-            )
+                By.xpath("//button[contains(text(),'Create Author') or contains(text(),'Update Author')]"),
+            ),
         ).click()
 
         Thread.sleep(2000)

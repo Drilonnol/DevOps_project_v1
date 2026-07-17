@@ -9,22 +9,18 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 
 @Entity
-@Table(name="books")
+@Table(name = "books")
 data class BookEntity(
     @Id
-    @Column(name="isbn")
+    @Column(name = "isbn")
     val isbn: String,
-
-    @Column(name="title")
+    @Column(name = "title")
     val title: String,
-
-    @Column(name="description")
+    @Column(name = "description")
     val description: String,
-
-    @Column(name="image")
+    @Column(name = "image")
     val image: String,
-
     @ManyToOne(cascade = [CascadeType.DETACH])
-    @JoinColumn(name="author_id")
-    val authorEntity: AuthorEntity
+    @JoinColumn(name = "author_id")
+    val authorEntity: AuthorEntity,
 )
