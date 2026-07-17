@@ -1,7 +1,16 @@
 package com.devtiro.bookstore.selenium
 
-import org.junit.jupiter.api.*
-import org.openqa.selenium.*
+import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.Tag
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
+import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.OutputType
+import org.openqa.selenium.TakesScreenshot
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.support.ui.ExpectedConditions
@@ -13,9 +22,9 @@ import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.time.Duration
 
+@Tag("selenium")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminBookFormTest {
-
     private lateinit var driver: WebDriver
 
     @BeforeAll
@@ -26,7 +35,7 @@ class AdminBookFormTest {
             "--disable-dev-shm-usage",
             "--no-sandbox",
             "--disable-gpu",
-            "--window-size=1920,1080"
+            "--window-size=1920,1080",
         )
         driver = ChromeDriver(options)
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5))
@@ -43,7 +52,10 @@ class AdminBookFormTest {
         }
     }
 
-    private fun waitUntilFrontendIsAvailable(url: String, timeoutSeconds: Long = 30) {
+    private fun waitUntilFrontendIsAvailable(
+        url: String,
+        timeoutSeconds: Long = 30,
+    ) {
         val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
         while (System.currentTimeMillis() < deadline) {
             try {
@@ -52,7 +64,8 @@ class AdminBookFormTest {
                 connection.readTimeout = 2000
                 connection.requestMethod = "GET"
                 if (connection.responseCode in 200..399) return
-            } catch (_: Exception) {}
+            } catch (_: Exception) {
+            }
             Thread.sleep(1000)
         }
         throw RuntimeException("Frontend not available at $url")
@@ -100,17 +113,19 @@ class AdminBookFormTest {
         doSafeClick(dropdownTrigger)
 
         // Wait and select first item in dropdown
-        val authorOptions = wait.until(
-            ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul[role='listbox'] li"))
-        )
+        val authorOptions =
+            wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul[role='listbox'] li")),
+            )
         require(authorOptions.isNotEmpty()) { "No authors available in dropdown" }
         doSafeClick(authorOptions[0])
 
-        val submitButton = wait.until(
-            ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[contains(text(),'Create Book') or contains(text(),'Update Book')]")
+        val submitButton =
+            wait.until(
+                ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[contains(text(),'Create Book') or contains(text(),'Update Book')]"),
+                ),
             )
-        )
         submitButton.click()
 
         Thread.sleep(2000)

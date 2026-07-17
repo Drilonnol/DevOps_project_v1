@@ -1,4 +1,3 @@
 package com.devtiro.bookstore.exceptions
 
-
-class InvalidAuthorException: Exception()
+class InvalidAuthorException : Exception()
