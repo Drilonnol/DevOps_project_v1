@@ -6,16 +6,20 @@ import com.devtiro.bookstore.repositories.AuthorRepository
 import com.devtiro.bookstore.repositories.BookRepository
 import com.devtiro.bookstore.toBookEntity
 import org.springframework.data.repository.findByIdOrNull
-import org.springframework.web.bind.annotation.*
 
 // Strategy Interface
 interface BookOperationStrategy {
-    fun execute(bookSummary: BookSummary, isbn: String): Pair<BookEntity, Boolean>
+    fun execute(
+        bookSummary: BookSummary,
+        isbn: String,
+    ): Pair<BookEntity, Boolean>
 }
 
-
 class AddBookStrategy(private val bookRepository: BookRepository, private val authorRepository: AuthorRepository) : BookOperationStrategy {
-    override fun execute(bookSummary: BookSummary, isbn: String): Pair<BookEntity, Boolean> {
+    override fun execute(
+        bookSummary: BookSummary,
+        isbn: String,
+    ): Pair<BookEntity, Boolean> {
         val normalisedBook = bookSummary.copy(isbn = isbn)
         val isExists = bookRepository.existsById(isbn)
 
@@ -29,15 +33,19 @@ class AddBookStrategy(private val bookRepository: BookRepository, private val au
 
 // Përditësimi i librit
 class UpdateBookStrategy(private val bookRepository: BookRepository) : BookOperationStrategy {
-    override fun execute(bookSummary: BookSummary, isbn: String): Pair<BookEntity, Boolean> {
+    override fun execute(
+        bookSummary: BookSummary,
+        isbn: String,
+    ): Pair<BookEntity, Boolean> {
         val existingBook = bookRepository.findByIdOrNull(isbn)
         checkNotNull(existingBook)
 
-        val updatedBook = existingBook.copy(
-            title = bookSummary.title,
-            description = bookSummary.description,
-            image = bookSummary.image
-        )
+        val updatedBook =
+            existingBook.copy(
+                title = bookSummary.title,
+                description = bookSummary.description,
+                image = bookSummary.image,
+            )
 
         return Pair(bookRepository.save(updatedBook), false)
     }
