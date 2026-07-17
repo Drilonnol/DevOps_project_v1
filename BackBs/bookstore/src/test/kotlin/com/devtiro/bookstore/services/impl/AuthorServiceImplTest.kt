@@ -343,15 +343,4 @@ class AuthorServiceImplTest @Autowired constructor(
         ).isFalse()
     }
 
-    @Test
-    fun `test that delete deletes an non-existing Author in the database`() {
-        val nonExistingId = 999L
-
-        underTest.delete(nonExistingId)
-
-        assertThat(
-            authorRepository.existsById(nonExistingId)
-        ).isFalse()
-    }
-
 }

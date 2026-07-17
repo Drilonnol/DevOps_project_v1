@@ -13,6 +13,7 @@ import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.time.Duration
 
+@Tag("selenium")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminBookFormTest {
 
