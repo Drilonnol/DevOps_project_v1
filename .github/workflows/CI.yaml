@@ -47,7 +47,11 @@ jobs:
           cache: maven
 
 
-      - name: Run Backend Tests
+      - name: Make Maven Wrapper executable
+        working-directory: BackBs/bookstore
+        run: chmod +x mvnw
+
+      - name: Run Tests
         working-directory: BackBs/bookstore
         run: ./mvnw clean test
 
