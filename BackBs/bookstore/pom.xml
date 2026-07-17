@@ -71,6 +71,13 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
+		<!-- Source: https://mvnrepository.com/artifact/com.github.gantsign.maven/ktlint-maven-plugin -->
+		<dependency>
+			<groupId>com.github.gantsign.maven</groupId>
+			<artifactId>ktlint-maven-plugin</artifactId>
+			<version>3.5.0</version>
+			<scope>compile</scope>
+		</dependency>
 		<!-- Spring Boot Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
