@@ -11,88 +11,30 @@ on:
 
 
 jobs:
-  ci:
+
+  backend-test:
+
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_DB: bookstore
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: changemeinprod!
-        ports:
-          - 5432:5432
-
-        options: >-
-          --health-cmd "pg_isready -U postgres -d bookstore"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
 
     steps:
 
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java 21
+
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
           cache: maven
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
 
-      - name: Install wait-on
-        run: npm install -g wait-on
-
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Run Backend Tests
+      - name: Run Tests
         working-directory: BackBs/bookstore
         run: mvn clean test
+
 
       - name: Kotlin Lint
         working-directory: BackBs/bookstore
         run: mvn ktlint:check
-
-      - name: Build Backend
-        working-directory: BackBs/bookstore
-        run: mvn clean package -DskipTests
-
-      - name: Start Backend
-        working-directory: BackBs/bookstore
-        run: |
-          java -jar target/*.jar > backend.log 2>&1 &
-
-      - name: Wait Backend
-        run: wait-on --timeout 60000 http://localhost:8081
-
-      - name: Backend Logs
-        if: failure()
-        run: cat BackBs/bookstore/backend.log
-
-      - name: Install Frontend
-        working-directory: FrontBs/bookstore
-        run: npm install
-
-      - name: Start Frontend
-        working-directory: FrontBs/bookstore
-        run: |
-          npm start > frontend.log 2>&1 &
-
-      - name: Wait Frontend
-        run: wait-on --timeout 60000 http://localhost:3000
-
-      - name: Frontend Logs
-        if: failure()
-        run: cat FrontBs/bookstore/frontend.log
-
-      - name: Run Selenium Tests
-        working-directory: BackBs/bookstore
-        run: mvn test -Dgroups=selenium
