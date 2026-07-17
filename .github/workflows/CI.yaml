@@ -31,7 +31,11 @@ jobs:
 
       - name: Run Tests
         working-directory: BackBs/bookstore
-        run: ./mvnw clean test
+        run: mvn clean test
+
+      - name: Run Kotlin Lint
+        working-directory: BackBs/bookstore
+        run: mvn ktlint:check
 
       - name: Package Application
         working-directory: BackBs/bookstore
