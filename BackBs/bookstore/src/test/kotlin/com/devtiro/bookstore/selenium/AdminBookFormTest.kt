@@ -16,7 +16,6 @@ import java.time.Duration
 @Tag("selenium")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminBookFormTest {
-
     private lateinit var driver: WebDriver
 
     @BeforeAll
@@ -27,7 +26,7 @@ class AdminBookFormTest {
             "--disable-dev-shm-usage",
             "--no-sandbox",
             "--disable-gpu",
-            "--window-size=1920,1080"
+            "--window-size=1920,1080",
         )
         driver = ChromeDriver(options)
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5))
@@ -44,7 +43,10 @@ class AdminBookFormTest {
         }
     }
 
-    private fun waitUntilFrontendIsAvailable(url: String, timeoutSeconds: Long = 30) {
+    private fun waitUntilFrontendIsAvailable(
+        url: String,
+        timeoutSeconds: Long = 30,
+    ) {
         val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
         while (System.currentTimeMillis() < deadline) {
             try {
@@ -53,7 +55,8 @@ class AdminBookFormTest {
                 connection.readTimeout = 2000
                 connection.requestMethod = "GET"
                 if (connection.responseCode in 200..399) return
-            } catch (_: Exception) {}
+            } catch (_: Exception) {
+            }
             Thread.sleep(1000)
         }
         throw RuntimeException("Frontend not available at $url")
@@ -101,17 +104,19 @@ class AdminBookFormTest {
         doSafeClick(dropdownTrigger)
 
         // Wait and select first item in dropdown
-        val authorOptions = wait.until(
-            ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul[role='listbox'] li"))
-        )
+        val authorOptions =
+            wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul[role='listbox'] li")),
+            )
         require(authorOptions.isNotEmpty()) { "No authors available in dropdown" }
         doSafeClick(authorOptions[0])
 
-        val submitButton = wait.until(
-            ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[contains(text(),'Create Book') or contains(text(),'Update Book')]")
+        val submitButton =
+            wait.until(
+                ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[contains(text(),'Create Book') or contains(text(),'Update Book')]"),
+                ),
             )
-        )
         submitButton.click()
 
         Thread.sleep(2000)
