@@ -100,7 +100,7 @@ class AuthorServiceImplTest
         fun `observer is notified when an author is created`() {
             val newAuthor =
                 AuthorEntity(
-                    id = null, // ID do të caktohet pas ruajtjes
+                    id = null,
                     name = "John Doe",
                     age = 45,
                     description = "A famous author",
@@ -127,7 +127,7 @@ class AuthorServiceImplTest
         fun `observer is not notified after being removed`() {
             val newAuthor =
                 AuthorEntity(
-                    id = null, // ID do të caktohet pas ruajtjes
+                    id = null,
                     name = "John Doe",
                     age = 45,
                     description = "A famous author",

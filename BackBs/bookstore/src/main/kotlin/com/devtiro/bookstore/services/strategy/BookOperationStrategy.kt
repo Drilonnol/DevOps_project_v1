@@ -6,7 +6,6 @@ import com.devtiro.bookstore.repositories.AuthorRepository
 import com.devtiro.bookstore.repositories.BookRepository
 import com.devtiro.bookstore.toBookEntity
 import org.springframework.data.repository.findByIdOrNull
-import org.springframework.web.bind.annotation.*
 
 // Strategy Interface
 interface BookOperationStrategy {
