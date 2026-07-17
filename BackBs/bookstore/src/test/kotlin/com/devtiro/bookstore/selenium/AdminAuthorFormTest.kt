@@ -1,6 +1,10 @@
 package com.devtiro.bookstore.selenium
 
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.Tag
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 import org.openqa.selenium.By
 import org.openqa.selenium.OutputType
 import org.openqa.selenium.TakesScreenshot
@@ -16,7 +20,7 @@ import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.time.Duration
 
-@Tag(/* value = */ "selenium")
+@Tag("selenium")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminAuthorFormTest {
     private lateinit var driver: WebDriver

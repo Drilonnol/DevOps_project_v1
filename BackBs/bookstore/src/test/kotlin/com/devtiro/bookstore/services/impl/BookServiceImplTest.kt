@@ -1,6 +1,6 @@
 package com.devtiro.bookstore.services.impl
 
-import com.devtiro.bookstore.*
+import com.devtiro.bookstore.BOOK_A_ISBN
 import com.devtiro.bookstore.domain.AuthorSummary
 import com.devtiro.bookstore.domain.BookUpdateRequest
 import com.devtiro.bookstore.repositories.AuthorRepository
@@ -8,6 +8,10 @@ import com.devtiro.bookstore.repositories.BookRepository
 import com.devtiro.bookstore.services.strategy.AddBookStrategy
 import com.devtiro.bookstore.services.strategy.BookContext
 import com.devtiro.bookstore.services.strategy.UpdateBookStrategy
+import com.devtiro.bookstore.testAuthorEntityA
+import com.devtiro.bookstore.testBookEntityA
+import com.devtiro.bookstore.testBookSummaryA
+import com.devtiro.bookstore.testBookSummaryB
 import jakarta.transaction.Transactional
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

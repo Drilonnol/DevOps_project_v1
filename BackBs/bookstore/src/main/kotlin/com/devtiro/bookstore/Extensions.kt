@@ -4,7 +4,11 @@ import com.devtiro.bookstore.domain.AuthorSummary
 import com.devtiro.bookstore.domain.AuthorUpdateRequest
 import com.devtiro.bookstore.domain.BookSummary
 import com.devtiro.bookstore.domain.BookUpdateRequest
-import com.devtiro.bookstore.domain.dto.*
+import com.devtiro.bookstore.domain.dto.AuthorDto
+import com.devtiro.bookstore.domain.dto.AuthorSummaryDto
+import com.devtiro.bookstore.domain.dto.AuthorUpdateRequestDto
+import com.devtiro.bookstore.domain.dto.BookSummaryDto
+import com.devtiro.bookstore.domain.dto.BookUpdateRequestDto
 import com.devtiro.bookstore.domain.entities.AuthorEntity
 import com.devtiro.bookstore.domain.entities.BookEntity
 import com.devtiro.bookstore.exceptions.InvalidAuthorException
@@ -18,7 +22,7 @@ fun AuthorEntity.toAuthorDto() =
         image = this.image,
     )
 
-fun AuthorEntity.toAuthorSummaryDto(): AuthorSummaryDto  {
+fun AuthorEntity.toAuthorSummaryDto(): AuthorSummaryDto {
     val authorId = this.id ?: throw InvalidAuthorException()
     return AuthorSummaryDto(
         id = authorId,
