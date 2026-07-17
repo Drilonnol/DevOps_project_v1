@@ -1,0 +1,59 @@
+services:
+
+  backend:
+    build:
+      context: ../BackBs/bookstore
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - ./back/.env
+    volumes:
+      - ./back/application.properties:/app/application.properties
+    environment:
+      SPRING_CONFIG_LOCATION: /app/application.properties
+    networks:
+      - mynet
+
+  frontend:
+    build:
+      context: ../FrontBs/bookstore
+      dockerfile: Dockerfile
+    image: drilonnol/frontendd:latest
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - mynet
+
+  db:
+    image: postgres:16-alpine
+    container_name: postgres-db
+    ports:
+      - "5432:5432"
+    restart: always
+    env_file:
+      - ./back/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres  -d bookstore"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mynet
+
+
+networks:
+  mynet:
+    driver: bridge
+
+volumes:
+  postgres_data:
