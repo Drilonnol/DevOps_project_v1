@@ -12,9 +12,8 @@ import java.util.concurrent.CopyOnWriteArrayList
 
 @Service
 class AuthorServiceImpl(
-    private val authorRepository: AuthorRepository
+    private val authorRepository: AuthorRepository,
 ) : AuthorService, Subject {
-
     private val observers: MutableList<AuthorObserver> = CopyOnWriteArrayList()
 
     override fun registerObserver(observer: AuthorObserver) {
@@ -41,10 +40,12 @@ class AuthorServiceImpl(
 
     override fun list(): List<AuthorEntity> = authorRepository.findAll()
 
-    override fun get(id: Long): AuthorEntity? =
-        if (id < 0) null else authorRepository.findById(id).orElse(null)
+    override fun get(id: Long): AuthorEntity? = if (id < 0) null else authorRepository.findById(id).orElse(null)
 
-    override fun fullUpdate(id: Long, author: AuthorEntity): AuthorEntity {
+    override fun fullUpdate(
+        id: Long,
+        author: AuthorEntity,
+    ): AuthorEntity {
         check(authorRepository.existsById(id)) { "Author not found" }
         require(author.age in 1..120) { "Author age must be between 1 and 120." }
         require(author.description.length <= 512) { "Description must be 512 characters or less." }
@@ -55,9 +56,13 @@ class AuthorServiceImpl(
         return saved
     }
 
-    override fun partialUpdate(id: Long, request: AuthorUpdateRequest): AuthorEntity {
-        val existing = authorRepository.findById(id)
-            .orElseThrow { IllegalStateException("Author not found") }
+    override fun partialUpdate(
+        id: Long,
+        request: AuthorUpdateRequest,
+    ): AuthorEntity {
+        val existing =
+            authorRepository.findById(id)
+                .orElseThrow { IllegalStateException("Author not found") }
 
         val newAge = request.age ?: existing.age
         val newDescription = request.description ?: existing.description
@@ -65,12 +70,13 @@ class AuthorServiceImpl(
         require(newAge in 1..120) { "Author age must be between 1 and 120." }
         require(newDescription.length <= 512) { "Description must be 512 characters or less." }
 
-        val updated = existing.copy(
-            name = request.name ?: existing.name,
-            age = newAge,
-            description = newDescription,
-            image = request.image ?: existing.image
-        )
+        val updated =
+            existing.copy(
+                name = request.name ?: existing.name,
+                age = newAge,
+                description = newDescription,
+                image = request.image ?: existing.image,
+            )
         val saved = authorRepository.save(updated)
         notifyObservers(saved)
         return saved
@@ -78,8 +84,9 @@ class AuthorServiceImpl(
 
     override fun delete(id: Long) {
         if (id < 0) throw IllegalStateException("Invalid author ID")
-        val existing = authorRepository.findById(id)
-            .orElseThrow { IllegalStateException("Author not found") }
+        val existing =
+            authorRepository.findById(id)
+                .orElseThrow { IllegalStateException("Author not found") }
         authorRepository.deleteById(id)
         notifyObservers(existing)
     }

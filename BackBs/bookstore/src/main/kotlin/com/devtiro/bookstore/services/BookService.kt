@@ -5,15 +5,19 @@ import com.devtiro.bookstore.domain.BookUpdateRequest
 import com.devtiro.bookstore.domain.entities.BookEntity
 
 interface BookService {
+    fun createUpdate(
+        isbn: String,
+        bookSummary: BookSummary,
+    ): Pair<BookEntity, Boolean>
 
-    fun createUpdate(isbn: String, bookSummary: BookSummary): Pair<BookEntity, Boolean>
-
-    fun list(authorId: Long?=null): List<BookEntity>
+    fun list(authorId: Long? = null): List<BookEntity>
 
     fun get(isbn: String): BookEntity?
 
-    fun partialUpdate(isbn: String, bookUpdateRequest: BookUpdateRequest): BookEntity
+    fun partialUpdate(
+        isbn: String,
+        bookUpdateRequest: BookUpdateRequest,
+    ): BookEntity
 
     fun delete(isbn: String)
-
 }

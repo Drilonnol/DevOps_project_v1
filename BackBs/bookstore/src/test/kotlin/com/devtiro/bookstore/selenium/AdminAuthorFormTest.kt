@@ -19,7 +19,6 @@ import java.time.Duration
 @Tag(/* value = */ "selenium")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminAuthorFormTest {
-
     private lateinit var driver: WebDriver
 
     @BeforeAll
@@ -36,7 +35,10 @@ class AdminAuthorFormTest {
         }
     }
 
-    private fun waitUntilFrontendIsAvailable(url: String, timeoutSeconds: Long = 30) {
+    private fun waitUntilFrontendIsAvailable(
+        url: String,
+        timeoutSeconds: Long = 30,
+    ) {
         val deadline = System.currentTimeMillis() + timeoutSeconds * 1000
         while (System.currentTimeMillis() < deadline) {
             try {
@@ -45,7 +47,8 @@ class AdminAuthorFormTest {
                 connection.readTimeout = 2000
                 connection.requestMethod = "GET"
                 if (connection.responseCode in 200..399) return
-            } catch (_: Exception) {}
+            } catch (_: Exception) {
+            }
             Thread.sleep(1000)
         }
         throw RuntimeException("Frontend not available at $url")
@@ -62,8 +65,8 @@ class AdminAuthorFormTest {
         try {
             wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
-                    By.cssSelector("input[aria-label='Name']")
-                )
+                    By.cssSelector("input[aria-label='Name']"),
+                ),
             )
         } catch (ex: Exception) {
             val screenshot = (driver as TakesScreenshot).getScreenshotAs(OutputType.FILE)
@@ -96,8 +99,8 @@ class AdminAuthorFormTest {
 
         wait.until(
             ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[contains(text(),'Create Author') or contains(text(),'Update Author')]")
-            )
+                By.xpath("//button[contains(text(),'Create Author') or contains(text(),'Update Author')]"),
+            ),
         ).click()
 
         Thread.sleep(2000)

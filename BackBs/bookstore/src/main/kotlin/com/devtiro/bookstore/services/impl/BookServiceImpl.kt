@@ -16,19 +16,27 @@ import org.springframework.stereotype.Service
 @Service
 class BookServiceImpl(
     val bookRepository: BookRepository,
-    val authorRepository: AuthorRepository
+    val authorRepository: AuthorRepository,
 ) : BookService {
-
     private val addBookStrategy = AddBookStrategy(bookRepository, authorRepository)
     private val updateBookStrategy = UpdateBookStrategy(bookRepository)
 
     @Transactional
-    override fun createUpdate(isbn: String, bookSummary: BookSummary): Pair<BookEntity, Boolean> {
-        val context = BookContext(if (
-            bookRepository.existsById(isbn))
-            updateBookStrategy else addBookStrategy
-        )
-        return context.executeOperation(bookSummary, isbn)  // Correct: passing BookSummary
+    override fun createUpdate(
+        isbn: String,
+        bookSummary: BookSummary,
+    ): Pair<BookEntity, Boolean> {
+        val context =
+            BookContext(
+                if (
+                    bookRepository.existsById(isbn)
+                ) {
+                    updateBookStrategy
+                } else {
+                    addBookStrategy
+                },
+            )
+        return context.executeOperation(bookSummary, isbn) // Correct: passing BookSummary
     }
 
     override fun list(authorId: Long?): List<BookEntity> {
@@ -41,15 +49,19 @@ class BookServiceImpl(
         return bookRepository.findByIdOrNull(isbn)
     }
 
-    override fun partialUpdate(isbn: String, bookUpdateRequest: BookUpdateRequest): BookEntity {
+    override fun partialUpdate(
+        isbn: String,
+        bookUpdateRequest: BookUpdateRequest,
+    ): BookEntity {
         val existingBook = bookRepository.findByIdOrNull(isbn)
         checkNotNull(existingBook)
 
-        val updatedBook = existingBook.copy(
-            title = bookUpdateRequest.title ?: existingBook.title,
-            description = bookUpdateRequest.description ?: existingBook.description,
-            image = bookUpdateRequest.image ?: existingBook.image
-        )
+        val updatedBook =
+            existingBook.copy(
+                title = bookUpdateRequest.title ?: existingBook.title,
+                description = bookUpdateRequest.description ?: existingBook.description,
+                image = bookUpdateRequest.image ?: existingBook.image,
+            )
 
         return bookRepository.save(updatedBook)
     }

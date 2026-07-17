@@ -5,5 +5,5 @@ data class BookSummary(
     val title: String,
     val description: String,
     val image: String,
-    val author: AuthorSummary
+    val author: AuthorSummary,
 )
