@@ -1,1 +1,12 @@
-back/.env
+
+Terraform-part-1/.terraform/
+
+Terraform-part-1/*.tfstate
+Terraform-part-1/*.tfstate.*
+
+
+Terraform-part-1/*.tfvars
+
+
+Terraform-part-1/crash.log
+Terraform-part-1/crash.*.log
