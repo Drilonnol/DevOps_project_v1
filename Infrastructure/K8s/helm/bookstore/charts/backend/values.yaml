@@ -1,9 +1,11 @@
 replicaCount: 1
 
 image:
-  repository: drilonnol/bookstore-backend
-  tag: latest
+  repository: ghcr.io/drilonnol/bookstore-backend
+  tag: sha-afdfab4
   pullPolicy: IfNotPresent
+imagePullSecrets:
+  - name: ghcr-secret
 
 containerPort: 8081
 
