@@ -11,9 +11,18 @@ data:
       root /usr/share/nginx/html;
       index index.html;
 
-      # Proxy ALL /v1/ API calls to the backend K8s Service
+      location /api/ {
+        proxy_pass http://bookstore-backend:8081/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+
       location /v1/ {
-        proxy_pass http://{{ .Release.Name }}-backend:8081/v1/;
+        proxy_pass http://bookstore-backend:8081;
+        proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -21,7 +30,7 @@ data:
       }
 
       location / {
-        try_files $uri $uri/ /index.html;
+        try_files $uri /index.html;
       }
 
       error_page 404 /index.html;

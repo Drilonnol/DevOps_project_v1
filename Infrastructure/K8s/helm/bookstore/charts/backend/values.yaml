@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/drilonnol/bookstore-backend
-  tag: latest
+  tag: sha-9f6b7a6
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: ghcr-secret
