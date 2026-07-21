@@ -2,8 +2,9 @@ import { Book } from "../domain/Book";
 import { BookUpdateRequest } from "../domain/BookUpdateRequest";
 import { handleServerException } from "./serviceUtil";
 
-// Base URL i backend-it
-const BASE_URL = "http://localhost:8081";
+// In Kubernetes the frontend Nginx proxies /v1/ to the backend service.
+// When running locally, point directly at the backend.
+const BASE_URL = process.env.REACT_APP_API_URL || '';
 
 export interface BookService {
   createUpdateBook(isbn: string, book: Book): Promise<Book>;

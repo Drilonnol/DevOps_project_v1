@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "frontend.fullname" . }}-nginx
+
+data:
+  default.conf: |
+    server {
+      listen 80;
+
+      root /usr/share/nginx/html;
+      index index.html;
+
+      # Proxy ALL /v1/ API calls to the backend K8s Service
+      location /v1/ {
+        proxy_pass http://{{ .Release.Name }}-backend:8081/v1/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      }
+
+      location / {
+        try_files $uri $uri/ /index.html;
+      }
+
+      error_page 404 /index.html;
+    }
