@@ -1,9 +1,10 @@
-
 import { Author } from "../domain/Author";
 import { AuthorUpdateRequest } from "../domain/AuthorUpdateRequest";
 import { handleServerException } from "./serviceUtil";
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081';
+// In Kubernetes, Nginx proxies /v1/ to the backend service — use relative paths.
+// REACT_APP_API_URL can be set to 'http://localhost:8081' for local development.
+const API_URL = process.env.REACT_APP_API_URL || '';
 
 export interface AuthorService {
   createAuthor(author: Author): Promise<Author>;

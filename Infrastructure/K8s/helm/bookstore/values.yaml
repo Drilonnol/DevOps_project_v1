@@ -1,0 +1,43 @@
+global:
+  environment: production
+
+postgresql:
+  enabled: true
+  auth:
+    postgresPassword: "changemeinprod!"
+    username: postgres
+    password: "changemeinprod!"
+    database: bookstore
+
+  primary:
+    persistence:
+      enabled: true
+      size: 8Gi
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+
+backend:
+  enabled: true
+
+frontend:
+  enabled: true
+
+ingress:
+  enabled: true
+  className: nginx
+  host: bookstore.local
+
+  annotations: {}
+
+  paths:
+    frontend:
+      service: bookstore-frontend
+      port: 80
+    backend:
+      service: bookstore-backend
+      port: 8081

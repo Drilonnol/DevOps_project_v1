@@ -1,0 +1,39 @@
+replicaCount: 1
+image:
+  repository: ghcr.io/drilonnol/bookstore-frontend
+  tag: sha-9f6b7a6
+  pullPolicy: IfNotPresent
+imagePullSecrets:
+  - name: ghcr-secret
+containerPort: 80
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  failureThreshold: 3
+
+autoscaling:
+  enabled: false
