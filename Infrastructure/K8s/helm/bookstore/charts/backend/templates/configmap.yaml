@@ -6,6 +6,5 @@ metadata:
 
 data:
   SPRING_PROFILES_ACTIVE: {{ .Values.config.springProfile | quote }}
-  DB_HOST: {{ .Values.config.database.host | quote }}
-  DB_PORT: {{ .Values.config.database.port | quote }}
-  DB_NAME: {{ .Values.config.database.name | quote }}
+
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ .Values.config.database.name }}"
