@@ -1,12 +1,12 @@
-variable "ecr_repository_name" {
+variable "repository_name" {
   description = "Name of the ECR repository"
   type        = string
-  default     = "my-ecr-repository"
+  default     = ""
 }
 
 variable "nametag" {
   description = "Name tag for resources"
-  nullable    = false
+  type        = string
 }
 
 variable "cluster_name" {
