@@ -36,4 +36,8 @@ variable "private_subnet_cidrs" {
   type        = list(string)
 }
 
-
+variable "nametag" {
+  description = "Name tag for resources"
+  type        = string
+  nullable    = false
+}
