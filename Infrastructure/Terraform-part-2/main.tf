@@ -25,11 +25,13 @@ module "sg" {
 module "eks" {
   source = "./eks"
 
-  cluster_name       = var.cluster_name
-  cluster_version    = var.cluster_version
-  vpc_id             = module.vpc.vpc_id
-  public_subnet_ids  = module.vpc.public_subnet_ids
-  private_subnet_ids = module.vpc.private_subnet_ids
+  cluster_name            = var.cluster_name
+  cluster_version         = var.cluster_version
+  backend_iam_policy_arns = var.backend_iam_policy_arns
+  enable_pod_identity     = var.enable_pod_identity
+  vpc_id                  = module.vpc.vpc_id
+  public_subnet_ids    = module.vpc.public_subnet_ids
+  private_subnet_ids   = module.vpc.private_subnet_ids
 
   cluster_role_arn = module.iam.cluster_role_arn
   node_role_arn    = module.iam.node_role_arn

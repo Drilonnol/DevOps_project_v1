@@ -15,6 +15,18 @@ variable "cluster_version" {
   default     = "1.31"
 }
 
+variable "backend_iam_policy_arns" {
+  description = "Additional IAM policy ARNs to attach to the backend IAM role"
+  type        = list(string)
+  default     = []
+}
+
+variable "enable_pod_identity" {
+  description = "Enable EKS pod identity support"
+  type        = bool
+  default     = false
+}
+
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
