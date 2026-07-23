@@ -11,3 +11,15 @@ Terraform-part-1/*.tfvars
 
 Terraform-part-1/crash.log
 Terraform-part-1/crash.*.log
+
+Terraform-part-2/.terraform/
+
+Terraform-part-2/*.tfstate
+Terraform-part-2/*.tfstate.*
+
+
+Terraform-part-2/*.tfvars
+
+
+Terraform-part-2/crash.log
+Terraform-part-2/crash.*.log

@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+
+metadata:
+  name: bookstore-alerts
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+
+spec:
+  groups:
+    - name: bookstore
+
+      rules:
+        - alert: BackendDown
+          expr: up{application="bookstore"} == 0
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Bookstore backend is down"
+        
