@@ -47,10 +47,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "backend.fullname" . }}
-
             - secretRef:
                 name: {{ include "backend.fullname" . }}
-
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
