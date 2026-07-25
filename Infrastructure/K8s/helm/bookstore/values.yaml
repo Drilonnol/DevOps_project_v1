@@ -1,25 +1,6 @@
 global:
   environment: production
 
-postgresql:
-  enabled: true
-  auth:
-    postgresPassword: "changemeinprod!"
-    username: postgres
-    password: "changemeinprod!"
-    database: bookstore
-
-  primary:
-    persistence:
-      enabled: true
-      size: 8Gi
-    resources:
-      requests:
-        cpu: 250m
-        memory: 256Mi
-      limits:
-        cpu: 500m
-        memory: 512Mi
 
 backend:
   enabled: true

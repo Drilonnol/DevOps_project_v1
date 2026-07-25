@@ -16,6 +16,8 @@ service:
 config:
   springProfile: prod
   database:
+    host: dev-eks-cluster-postgres.c5s22quuyl2x.us-east-1.rds.amazonaws.com
+    port: 5432
     name: bookstore
 
 secret:
