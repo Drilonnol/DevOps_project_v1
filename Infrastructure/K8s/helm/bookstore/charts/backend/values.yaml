@@ -56,3 +56,6 @@ securityContext:
   allowPrivilegeEscalation: false
 autoscaling:
   enabled: false
+
+serviceMonitor:
+  enabled: false
