@@ -22,7 +22,7 @@ config:
 
 secret:
   dbUsername: postgres
-  dbPassword: changemeinprod!
+  dbPassword: changemeinprod123!
   jwtSecret: my-secret-key
 
 resources:
