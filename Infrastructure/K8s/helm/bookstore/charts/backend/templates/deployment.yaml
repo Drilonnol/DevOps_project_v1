@@ -48,20 +48,9 @@ spec:
             - configMapRef:
                 name: {{ include "backend.fullname" . }}
 
+            - secretRef:
+                name: {{ include "backend.fullname" . }}
 
-          env:
-
-            # PostgreSQL username
-            - name: SPRING_DATASOURCE_USERNAME
-              value: "postgres"
-
-
-            # PostgreSQL password from Bitnami secret
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Release.Name }}-postgresql
-                  key: postgres-password
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
