@@ -4,8 +4,7 @@ image:
   repository: ghcr.io/drilonnol/bookstore-backend
   tag: sha-c64453c
   pullPolicy: IfNotPresent
-imagePullSecrets:
-  - name: ghcr-secret
+imagePullSecrets: []
 
 containerPort: 8081
 
