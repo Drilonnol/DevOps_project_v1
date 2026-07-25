@@ -1,0 +1,84 @@
+name: Deploy to EKS
+
+on:
+  workflow_dispatch:
+    inputs:
+      image-tag:
+        required: true
+        default: "latest"
+
+  workflow_run:
+    workflows: ["Docker ECR CI"]
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: dev-eks-cluster-dev-ecr-repo
+  EKS_CLUSTER_NAME: dev-eks-cluster
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Resolve ECR registry
+        id: ecr
+        run: |
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          echo "registry=${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com" >> "$GITHUB_OUTPUT"
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig \
+            --name ${{ env.EKS_CLUSTER_NAME }} \
+            --region ${{ env.AWS_REGION }}
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.14.0
+
+      - name: Set image tag
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ inputs.image-tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=$(echo ${{ github.event.workflow_run.head_sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Helm dependencies
+        run: |
+          helm dependency update ./Infrastructure/K8s/helm/bookstore
+
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install bookstore \
+            ./Infrastructure/K8s/helm/bookstore \
+            --namespace bookstore \
+            --create-namespace \
+            --set backend.image.repository=${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }} \
+            --set backend.image.tag=backend-${{ steps.vars.outputs.tag }} \
+            --set frontend.image.repository=${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }} \
+            --set frontend.image.tag=frontend-${{ steps.vars.outputs.tag }} \
+            --wait \
+            --timeout 5m
