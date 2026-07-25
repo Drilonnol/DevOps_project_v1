@@ -1,0 +1,67 @@
+name: Deploy to EKS
+
+on:
+  workflow_dispatch:
+    inputs:
+      image-tag:
+        required: true
+        default: "latest"
+  workflow_run:
+    workflows: ["Docker ECR CI"]
+    types:
+      - completed
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: eu-central-1
+  ECR_REGISTRY: ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com
+  EKS_CLUSTER_NAME: your-cluster-name
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER_NAME }} --region ${{ env.AWS_REGION }}
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.14.0
+
+      - name: Set image tag
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ inputs.image-tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=$(echo ${{ github.event.workflow_run.head_sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Helm dependencies
+        run: helm dependency update ./Infrastructure/K8s/helm/bookstore
+
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install bookstore ./Infrastructure/K8s/helm/bookstore \
+            --namespace bookstore \
+            --create-namespace \
+            --set backend.image.repository=${{ env.ECR_REGISTRY }}/bookstore-backend \
+            --set backend.image.tag=${{ steps.vars.outputs.tag }} \
+            --set frontend.image.repository=${{ env.ECR_REGISTRY }}/bookstore-frontend \
+            --set frontend.image.tag=${{ steps.vars.outputs.tag }} \
+            --wait --timeout 5m
