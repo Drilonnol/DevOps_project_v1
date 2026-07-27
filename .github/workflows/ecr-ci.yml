@@ -8,12 +8,10 @@ on:
 
 permissions:
   contents: read
-  id-token: write   
 #aws sts get-caller-identity
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: dev-eks-cluster-dev-ecr-repo
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: "true"
 
 jobs:
   build-and-push:
@@ -26,10 +24,11 @@ jobs:
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Configure AWS Credentials (OIDC)
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::995595915262:role/dev-eks-cluster-github-actions
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR

@@ -13,7 +13,3 @@ output "node_role_name" {
 output "backend_irsa_role_arn" {
   value = aws_iam_role.backend_irsa.arn
 }
-
-output "github_actions_role_arn" {
-  value = aws_iam_role.github_actions.arn
-}
