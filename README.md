@@ -19,7 +19,7 @@ The application is deployed to AWS EKS using Helm charts.
 
 Prometheus and Grafana are used for monitoring application and cluster metrics.2
 
-# VPC
+### VPC
 
 ![Architecture Diagram](docs/architecture.png)
 
