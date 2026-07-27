@@ -17,7 +17,11 @@ GitHub Actions handles CI/CD by running tests, building Docker images, pushing i
 
 The application is deployed to AWS EKS using Helm charts.
 
-Prometheus and Grafana are used for monitoring application and cluster metrics.
+Prometheus and Grafana are used for monitoring application and cluster metrics.2
+
+# VPC
+
+![Architecture Diagram](docs/architecture.png)
 
 ## Infrastructure
 
