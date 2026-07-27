@@ -90,7 +90,10 @@ resource "aws_iam_role_policy_attachment" "backend_rds_connect" {
 resource "aws_iam_openid_connect_provider" "github" {
   url             = "https://token.actions.githubusercontent.com"
   client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = ["1c58a3a8518e8759bf075b76b750d4f2df264fcd"]
+  thumbprint_list = [
+    "6938fd4d98bab03faadb97b34396831e3780aea1",
+    "1c58a3a8518e8759bf075b76b750d4f2df264fcd"
+  ]
 }
 
 resource "aws_iam_role" "github_actions" {
@@ -109,7 +112,11 @@ resource "aws_iam_role" "github_actions" {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
         }
         StringLike = {
-          "token.actions.githubusercontent.com:sub" = "repo:Drilonnol/DevOps_project_v1:*"
+          "token.actions.githubusercontent.com:sub" = [
+            "repo:Drilonnol/DevOps_project_v1:*",
+            "repo:drilonnol/DevOps_project_v1:*",
+            "repo:drilonnol/devops_project_v1:*"
+          ]
         }
       }
     }]
