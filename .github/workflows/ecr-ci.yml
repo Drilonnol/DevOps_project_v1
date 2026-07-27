@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write   
 #aws sts get-caller-identity
 env:
   AWS_REGION: us-east-1
@@ -24,11 +25,10 @@ jobs:
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Configure AWS Credentials
+      - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN_CI }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR

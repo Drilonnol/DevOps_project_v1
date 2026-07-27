@@ -27,8 +27,9 @@ secret:
 serviceAccount:
   create: true
   name: backend-sa
-  roleArn: "arn:aws:iam::995595915262:role/dev-eks-cluster-backend-irsa"  
-
+  annotations:
+    eks.amazonaws.com/role-arn: "arn:aws:iam::995595915262:role/dev-eks-cluster-backend-irsa"
+#aws iam list-open-id-connect-providers
 resources:
   requests:
     cpu: 250m

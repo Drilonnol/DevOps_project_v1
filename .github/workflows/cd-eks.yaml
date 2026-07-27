@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write  
 
 env:
   AWS_REGION: us-east-1
@@ -33,11 +34,10 @@ jobs:
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
-      - name: Configure AWS credentials
+      - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN_CD }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Resolve ECR registry
