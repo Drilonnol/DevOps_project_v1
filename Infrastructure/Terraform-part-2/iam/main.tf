@@ -109,7 +109,7 @@ resource "aws_iam_role" "github_actions" {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
         }
         StringLike = {
-          "token.actions.githubusercontent.com:sub" = "repo:YOUR_USERNAME/YOUR_REPO:*"
+          "token.actions.githubusercontent.com:sub" = "repo:Drilonnol/DevOps_project_v1:*"
         }
       }
     }]
