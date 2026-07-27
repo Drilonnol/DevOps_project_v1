@@ -88,11 +88,13 @@
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>software.amazon.jdbc</groupId>
-			<artifactId>aws-jdbc-wrapper</artifactId>
-			<version>2.5.3</version>
-		</dependency>
+        <!-- Source: https://mvnrepository.com/artifact/software.amazon.jdbc/aws-advanced-jdbc-wrapper -->
+        <dependency>
+            <groupId>software.amazon.jdbc</groupId>
+            <artifactId>aws-advanced-jdbc-wrapper</artifactId>
+            <version>2.6.7</version>
+            <scope>compile</scope>
+        </dependency>
 		<!-- Spring Boot Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
