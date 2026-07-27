@@ -113,9 +113,9 @@ resource "aws_iam_role" "github_actions" {
         }
         StringLike = {
           "token.actions.githubusercontent.com:sub" = [
-            "repo:Drilonnol/DevOps_project_v1:*",
+            "repo:drilonnol/devops_project_v1:*",
             "repo:drilonnol/DevOps_project_v1:*",
-            "repo:drilonnol/devops_project_v1:*"
+            "repo:Drilonnol/DevOps_project_v1:*"
           ]
         }
       }
