@@ -66,3 +66,21 @@ module "rds" {
   db_username = var.db_username
   db_password = var.db_password
 }
+
+resource "aws_eks_access_entry" "github_actions" {
+  depends_on    = [module.eks]
+  cluster_name  = var.cluster_name
+  principal_arn = module.iam.github_actions_role_arn
+  type          = "STANDARD"
+}
+
+resource "aws_eks_access_policy_association" "github_actions" {
+  depends_on    = [module.eks, aws_eks_access_entry.github_actions]
+  cluster_name  = var.cluster_name
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+  principal_arn = module.iam.github_actions_role_arn
+
+  access_scope {
+    type = "cluster"
+  }
+}
