@@ -31,6 +31,7 @@ spec:
       securityContext:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      serviceAccountName: {{ .Values.serviceAccount.name }}
       containers:
         - name: backend
           {{- with .Values.securityContext }}
