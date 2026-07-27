@@ -11,7 +11,12 @@ module "vpc" {
 module "iam" {
   source = "./iam"
 
-  cluster_name = var.cluster_name
+  cluster_name       = var.cluster_name
+  oidc_provider_arn  = module.eks.oidc_provider_arn
+  oidc_issuer_url    = module.eks.oidc_issuer_url
+  rds_resource_id    = module.rds.db_instance_resource_id
+  aws_region         = var.region
+  account_id         = data.aws_caller_identity.current.account_id
 }
 
 module "sg" {
