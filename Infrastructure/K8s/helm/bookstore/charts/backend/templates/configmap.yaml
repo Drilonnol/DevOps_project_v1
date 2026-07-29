@@ -7,4 +7,8 @@ metadata:
 data:
   SPRING_PROFILES_ACTIVE: {{ .Values.config.springProfile | quote }}
 
-  SPRING_DATASOURCE_URL: "jdbc:postgresql://{{ .Values.config.database.host }}:{{ .Values.config.database.port }}/{{ .Values.config.database.name }}"
+  SPRING_DATASOURCE_URL: "jdbc:aws-wrapper:postgresql://{{ .Values.config.database.host }}:{{ .Values.config.database.port }}/{{ .Values.config.database.name }}?wrapperPlugins=iam"
+
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME: "software.amazon.jdbc.Driver"
+
+  SPRING_DATASOURCE_USERNAME: {{ .Values.config.database.username | quote }}

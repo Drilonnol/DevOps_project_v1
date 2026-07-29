@@ -53,3 +53,12 @@ output "configure_kubectl" {
   description = "Command to configure kubectl to connect to the new EKS cluster"
   value       = "aws eks update-kubeconfig --region ${var.region} --name ${module.eks.cluster_name}"
 }
+
+output "backend_irsa_role_arn" {
+  value = module.iam.backend_irsa_role_arn
+}
+
+output "github_actions_role_arn" {
+  description = "IAM Role ARN used by GitHub Actions OIDC"
+  value       = module.iam.github_actions_role_arn
+}

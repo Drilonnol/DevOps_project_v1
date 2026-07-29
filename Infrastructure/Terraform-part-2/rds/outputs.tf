@@ -22,3 +22,7 @@ output "db_security_group_id" {
   description = "ID of the RDS security group"
   value       = aws_security_group.rds.id
 }
+
+output "db_instance_resource_id" {
+  value = aws_db_instance.this.resource_id
+}
