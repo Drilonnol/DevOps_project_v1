@@ -88,8 +88,8 @@ resource "aws_iam_role_policy_attachment" "backend_rds_connect" {
 }
 
 resource "aws_iam_openid_connect_provider" "github" {
-  url             = "https://token.actions.githubusercontent.com"
-  client_id_list  = ["sts.amazonaws.com"]
+  url            = "https://token.actions.githubusercontent.com"
+  client_id_list = ["sts.amazonaws.com"]
   thumbprint_list = [
     "6938fd4d98bab03faadb97b34396831e3780aea1",
     "1c58a3a8518e8759bf075b76b750d4f2df264fcd"
@@ -102,6 +102,7 @@ resource "aws_iam_role" "github_actions" {
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
+      Sid    = "GitHubActionsOIDC"
       Effect = "Allow"
       Principal = {
         Federated = aws_iam_openid_connect_provider.github.arn
@@ -113,9 +114,12 @@ resource "aws_iam_role" "github_actions" {
         }
         StringLike = {
           "token.actions.githubusercontent.com:sub" = [
-            "repo:drilonnol/devops_project_v1:*",
-            "repo:drilonnol/DevOps_project_v1:*",
-            "repo:Drilonnol/DevOps_project_v1:*"
+            "repo:Drilonnol/DevOps_project_v1:ref:refs/heads/main",
+            "repo:Drilonnol/DevOps_project_v1:ref:refs/heads/feature/*",
+            "repo:Drilonnol/DevOps_project_v1:ref:refs/pull/*",
+            "repo:drilonnol/devops_project_v1:ref:refs/heads/main",
+            "repo:drilonnol/devops_project_v1:ref:refs/heads/feature/*",
+            "repo:drilonnol/devops_project_v1:ref:refs/pull/*"
           ]
         }
       }
@@ -144,8 +148,8 @@ resource "aws_iam_policy" "github_actions" {
         Resource = "*"
       },
       {
-        Effect = "Allow"
-        Action = ["eks:DescribeCluster"]
+        Effect   = "Allow"
+        Action   = ["eks:DescribeCluster"]
         Resource = "arn:aws:eks:${var.aws_region}:${var.account_id}:cluster/${var.cluster_name}"
       }
     ]
