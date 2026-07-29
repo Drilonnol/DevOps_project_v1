@@ -34,18 +34,18 @@ resource "aws_security_group" "rds" {
 }
 
 resource "aws_db_instance" "this" {
-  identifier             = "${var.cluster_name}-postgres"
-  allocated_storage      = var.allocated_storage
-  storage_type           = "gp2"
-  engine                 = "postgres"
-  engine_version         = "16.13"
-  instance_class         = var.instance_class
-  db_name                = var.db_name
-  username               = var.db_username
-  password               = var.db_password
+  identifier                          = "${var.cluster_name}-postgres"
+  allocated_storage                   = var.allocated_storage
+  storage_type                        = "gp2"
+  engine                              = "postgres"
+  engine_version                      = "16.13"
+  instance_class                      = var.instance_class
+  db_name                             = var.db_name
+  username                            = var.db_username
+  password                            = var.db_password
   iam_database_authentication_enabled = true
-  db_subnet_group_name   = aws_db_subnet_group.this.name
-  vpc_security_group_ids = [aws_security_group.rds.id]
+  db_subnet_group_name                = aws_db_subnet_group.this.name
+  vpc_security_group_ids              = [aws_security_group.rds.id]
 
   publicly_accessible = false
   skip_final_snapshot = true

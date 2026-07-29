@@ -11,12 +11,12 @@ module "vpc" {
 module "iam" {
   source = "./iam"
 
-  cluster_name       = var.cluster_name
-  oidc_provider_arn  = module.eks.oidc_provider_arn
-  oidc_issuer_url    = module.eks.oidc_issuer_url
-  rds_resource_id    = module.rds.db_instance_resource_id
-  aws_region         = var.region
-  account_id         = data.aws_caller_identity.current.account_id
+  cluster_name      = var.cluster_name
+  oidc_provider_arn = module.eks.oidc_provider_arn
+  oidc_issuer_url   = module.eks.oidc_issuer_url
+  rds_resource_id   = module.rds.db_instance_resource_id
+  aws_region        = var.region
+  account_id        = data.aws_caller_identity.current.account_id
 }
 
 module "sg" {
@@ -35,8 +35,8 @@ module "eks" {
   backend_iam_policy_arns = var.backend_iam_policy_arns
   enable_pod_identity     = var.enable_pod_identity
   vpc_id                  = module.vpc.vpc_id
-  public_subnet_ids    = module.vpc.public_subnet_ids
-  private_subnet_ids   = module.vpc.private_subnet_ids
+  public_subnet_ids       = module.vpc.public_subnet_ids
+  private_subnet_ids      = module.vpc.private_subnet_ids
 
   cluster_role_arn = module.iam.cluster_role_arn
   node_role_arn    = module.iam.node_role_arn
