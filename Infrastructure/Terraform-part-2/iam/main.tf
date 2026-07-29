@@ -114,12 +114,9 @@ resource "aws_iam_role" "github_actions" {
         }
         StringLike = {
           "token.actions.githubusercontent.com:sub" = [
-            "repo:Drilonnol/DevOps_project_v1:ref:refs/heads/main",
-            "repo:Drilonnol/DevOps_project_v1:ref:refs/heads/feature/*",
-            "repo:Drilonnol/DevOps_project_v1:ref:refs/pull/*",
-            "repo:drilonnol/devops_project_v1:ref:refs/heads/main",
-            "repo:drilonnol/devops_project_v1:ref:refs/heads/feature/*",
-            "repo:drilonnol/devops_project_v1:ref:refs/pull/*"
+            "repo:Drilonnol*/DevOps_project_v1*:ref:refs/heads/main",
+            "repo:Drilonnol*/DevOps_project_v1*:ref:refs/heads/feature/*",
+            "repo:Drilonnol*/DevOps_project_v1*:ref:refs/pull/*"
           ]
         }
       }
