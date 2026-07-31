@@ -1,0 +1,43 @@
+{{- if .Values.config.dbInitHook }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "backend.fullname" . }}-db-init
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: db-init
+          image: postgres:16-alpine
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "backend.fullname" . }}
+                  key: POSTGRES_PASSWORD
+                  optional: true
+          command:
+            - sh
+            - -c
+            - |
+              psql -h {{ .Values.config.database.host }} -U {{ .Values.config.database.adminUsername | default "postgres" }} -d {{ .Values.config.database.name }} <<'EOF'
+              DO $$
+              BEGIN
+                IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'backend_app') THEN
+                  CREATE USER backend_app;
+                END IF;
+              END
+              $$;
+              GRANT rds_iam TO backend_app;
+              GRANT USAGE, CREATE ON SCHEMA public TO backend_app;
+              GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO backend_app;
+              GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO backend_app;
+              ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO backend_app;
+              ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO backend_app;
+              EOF
+{{- end }}
