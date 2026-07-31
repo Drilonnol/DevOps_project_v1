@@ -16,7 +16,7 @@ service:
 config:
   springProfile: prod
   database:
-    host: dev-eks-cluster-postgres.cv0ymw2ms3sl.us-east-1.rds.amazonaws.com
+    host: ddev-eks-cluster-postgres.cchqqmiqaw53.us-east-1.rds.amazonaws.com[]
     port: 5432
     name: bookstore
     username: backend_app  
@@ -28,7 +28,7 @@ serviceAccount:
   create: true
   name: backend-sa
   annotations:
-    eks.amazonaws.com/role-arn: "arn:aws:iam::381492253302:role/dev-eks-cluster-backend-irsa"
+    eks.amazonaws.com/role-arn: "arn:aws:iam::261513860477:role/dev-eks-cluster-backend-irsa"
 #aws iam list-open-id-connect-providers
 resources:
   requests:
