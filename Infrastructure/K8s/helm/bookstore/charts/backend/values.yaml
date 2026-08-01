@@ -20,7 +20,9 @@ config:
     host: dev-eks-cluster-postgres.cshamuggmii0.us-east-1.rds.amazonaws.com
     port: 5432
     name: bookstore
-    username: backend_app  
+    adminUsername: postgres
+    adminPassword: changemeinprod123!
+    username: backend_app
 
 secret:
   jwtSecret: my-secret-key
