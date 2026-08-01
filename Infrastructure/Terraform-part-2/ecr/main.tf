@@ -1,6 +1,6 @@
 resource "aws_ecr_repository" "ecr_repo" {
-  name = var.repository_name != "" ? var.repository_name : "${var.cluster_name}-${var.nametag}-ecr-repo"
-  //output is the name of the ECR repository wich is created in AWS and name look like clustername is 
+  name                 = var.repository_name != "" ? var.repository_name : "${var.cluster_name}-${var.nametag}-ecr-repo" 
+  force_delete = true
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {

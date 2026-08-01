@@ -1,10 +1,10 @@
 name: Docker ECR CI
 
-on:
-  push:
-    branches:
-      - main
-      - feature/**
+# on:
+#   push:
+#     branches:
+#       - main
+#       - feature/**
 
 permissions:
   contents: read
