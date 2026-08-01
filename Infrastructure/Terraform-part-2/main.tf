@@ -67,6 +67,13 @@ module "rds" {
   db_password = var.db_password
 }
 
+ module "nlb" {
+   source     = "./nlb"
+   depends_on = [module.eks]
+ }
+
+
+
 resource "aws_eks_access_entry" "github_actions" {
   depends_on    = [module.eks]
   cluster_name  = var.cluster_name
