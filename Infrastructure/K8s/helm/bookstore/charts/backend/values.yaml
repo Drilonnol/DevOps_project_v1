@@ -21,11 +21,11 @@ config:
     port: 5432
     name: bookstore
     adminUsername: postgres
-    adminPassword: changemeinprod123!
+    adminPassword: ""
     username: backend_app
 
 secret:
-  jwtSecret: my-secret-key
+  jwtSecret: ""
 
 serviceAccount:
   create: true

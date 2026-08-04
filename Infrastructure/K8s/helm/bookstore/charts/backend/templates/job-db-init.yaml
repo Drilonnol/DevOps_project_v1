@@ -16,7 +16,7 @@ spec:
           image: postgres:16-alpine
           env:
             - name: PGPASSWORD
-              value: {{ .Values.config.database.adminPassword | quote }}
+              value: {{ required "DB_PASSWORD: DB_PASSWORD" .Values.config.database.adminPassword | quote }}
           command:
             - sh
             - -c
@@ -40,7 +40,7 @@ spec:
               GRANT rds_iam TO backend_app;
 
               GRANT CONNECT
-              ON DATABASE {{ .Values.config.database.name }}
+              ON DATABASE {{ .Values.config.database.name | quote }}
               TO backend_app;
 
               GRANT USAGE, CREATE

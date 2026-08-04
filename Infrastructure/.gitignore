@@ -1,5 +1,13 @@
 back/.env
 .env
+.env.*
+*.env.local
+
+values.secret.yaml
+values.secrets.yaml
+*-secrets.yaml
+*-secret-override.yaml
+
 Terraform-part-1/.terraform/
 
 Terraform-part-1/*.tfstate
