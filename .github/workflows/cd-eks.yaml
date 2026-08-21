@@ -83,6 +83,5 @@ jobs:
             --set frontend.image.repository=${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }} \
             --set frontend.image.tag=frontend-${{ steps.vars.outputs.tag }} \
             --set backend.config.database.adminPassword="${{ secrets.DB_PASSWORD }}" \
-            --set backend.secret.jwtSecret="${{ secrets.JWT_SECRET }}" \
             --wait \
             --timeout 5m

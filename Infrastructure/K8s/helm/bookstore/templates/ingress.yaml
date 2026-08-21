@@ -5,18 +5,21 @@ metadata:
   name: {{ include "bookstore.fullname" . }}-ingress
   labels:
     {{- include "bookstore.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   ingressClassName: {{ .Values.ingress.className | default "nginx" }}
   rules:
+  {{- if .Values.ingress.host }}
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+  {{- else }}
     - http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Values.ingress.paths.frontend.service }}
-                port:
-                  number: {{ .Values.ingress.paths.frontend.port }}
+  {{- end }}
           - path: /api
             pathType: Prefix
             backend:
@@ -24,4 +27,11 @@ spec:
                 name: {{ .Values.ingress.paths.backend.service }}
                 port:
                   number: {{ .Values.ingress.paths.backend.port }}
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.ingress.paths.frontend.service }}
+                port:
+                  number: {{ .Values.ingress.paths.frontend.port }}
 {{- end }}

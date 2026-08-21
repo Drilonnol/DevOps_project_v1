@@ -67,10 +67,10 @@ module "rds" {
   db_password = var.db_password
 }
 
- module "nlb" {
-   source     = "./nlb"
-   depends_on = [module.eks]
- }
+#  module "nlb" {
+#    source     = "./nlb"
+#    depends_on = [module.eks]
+#  }
 
 
 
