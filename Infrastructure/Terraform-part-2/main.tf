@@ -72,10 +72,10 @@ module "rds" {
    depends_on = [module.eks]
  }
 
-module "monitoring" {
-  source     = "./monitoring"
-  depends_on = [module.eks]
-}
+# module "monitoring" {
+#   source     = "./monitoring"
+#   depends_on = [module.eks]
+# }
 
 
 
