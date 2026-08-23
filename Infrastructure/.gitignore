@@ -31,3 +31,7 @@ Terraform-part-2/*.tfvars
 
 Terraform-part-2/crash.log
 Terraform-part-2/crash.*.log
+
+# Kubernetes secrets
+**/*secret*.yaml
+**/*secret*.yml

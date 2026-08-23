@@ -98,7 +98,7 @@ terraform init
 terraform apply -var-file=terraform.tfvars
 ```
 
-Provision the second part:
+Provision the second part (provisions EKS, ingress-nginx, and the monitoring stack via Helm releases):
 
 ```bash
 cd Infrastructure/Terraform-part-2

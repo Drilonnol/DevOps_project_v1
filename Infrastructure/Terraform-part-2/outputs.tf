@@ -62,3 +62,8 @@ output "github_actions_role_arn" {
   description = "IAM Role ARN used by GitHub Actions OIDC"
   value       = module.iam.github_actions_role_arn
 }
+
+output "monitoring_release_name" {
+  description = "Helm release name for monitoring stack"
+  value       = module.monitoring.release_name
+}

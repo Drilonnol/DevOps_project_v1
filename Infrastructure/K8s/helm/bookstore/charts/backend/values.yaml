@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/drilonnol/bookstore-backend
-  tag: sha-c64453c
+  repository: 071540691508.dkr.ecr.us-east-1.amazonaws.com/dev-eks-cluster-dev-ecr-repo
+  tag: backend-242ed56
   pullPolicy: IfNotPresent
 imagePullSecrets: []
 
@@ -64,4 +64,4 @@ autoscaling:
   enabled: false
 
 serviceMonitor:
-  enabled: false
+  enabled: true
