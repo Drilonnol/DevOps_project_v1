@@ -8,6 +8,8 @@ resource "helm_release" "kube_prometheus_stack" {
   version          = var.chart_version
   timeout          = 600
   wait             = true
+  cleanup_on_fail  = true
+  force_update     = true
 
   values = [
     file(var.values_file_path != "" ? var.values_file_path : "${path.module}/../../K8s/monitoring/values.yaml")
