@@ -86,6 +86,21 @@ Port-forward locally:
 ```bash
 kubectl port-forward -n bookstore svc/<frontend-service-name> 3000:80
 kubectl port-forward -n bookstore svc/<backend-service-name> 8081:8081
+
+kubectl describe pod <pod-name> -n bookstore
+kubectl logs <pod-name> -n bookstore
+
+kubectl port-forward -n bookstore svc/bookstore-backend 8081:8081
+kubectl scale deployment bookstore-backend --replicas=0 -n bookstore
+
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl replace -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml --force
+
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d ; echo
+
+Login:
 ```
 
 ### 3. Provision infrastructure with Terraform
@@ -104,6 +119,10 @@ Provision the second part (provisions EKS, ingress-nginx, and the monitoring sta
 cd Infrastructure/Terraform-part-2
 terraform init
 terraform apply -var-file=dev.tfvars
+
+terraform init -upgrade
+terraform providers
+terraform validate
 ```
 
 ### 4. Access monitoring tools
@@ -113,6 +132,7 @@ Port-forward Prometheus and Grafana:
 ```bash
 kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-prometheus 9090:9090
 kubectl port-forward -n monitoring svc/prometheus-grafana 3001:80
+kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-alertmanager 9093:9093
 ```
 
 Then open:

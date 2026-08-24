@@ -17,7 +17,7 @@ config:
   dbInitHook: true
   springProfile: prod
   database:
-    host: dev-eks-cluster-postgres.cxaeu48q49rz.us-east-1.rds.amazonaws.com
+    host: dev-eks-cluster-postgres.ckhkeogg21ln.us-east-1.rds.amazonaws.com
     port: 5432
     name: bookstore
     adminUsername: postgres
@@ -27,7 +27,7 @@ config:
 serviceAccount:
   create: true
   name: backend-sa
-  roleArn: "arn:aws:iam::975049989584:role/dev-eks-cluster-backend-irsa"  
+  roleArn: "arn:aws:iam::715736407442:role/dev-eks-cluster-backend-irsa"  
   annotations: {}
 #aws iam list-open-id-connect-providers
 resources:
