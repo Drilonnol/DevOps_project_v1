@@ -9,6 +9,8 @@ This project is a cloud-native bookstore application deployed on AWS using Terra
 
 ## Architecture
 
+![Application Overview](docs/application-overview.png)
+
 This project implements a cloud-native architecture on AWS with the following layers:
 
 - Terraform provisions the AWS infrastructure, including VPC, EKS, IAM, ECR, Security Groups, and RDS.
@@ -133,6 +135,7 @@ Port-forward Prometheus and Grafana:
 kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-prometheus 9090:9090
 kubectl port-forward -n monitoring svc/prometheus-grafana 3001:80
 kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-alertmanager 9093:9093
+
 ```
 
 Then open:
